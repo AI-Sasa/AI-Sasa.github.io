@@ -1,0 +1,10 @@
+# The Sanity editor is a separate app - never deploy it with the website
+studio/
+node_modules/
+
+# Generated upload folder
+publish/
+
+# Local tooling
+.claude/
+*.log

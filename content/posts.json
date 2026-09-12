@@ -1,0 +1,135 @@
+{
+  "posts": [
+    {
+      "slug": "vocal-biomarkers-parkinsons",
+      "title": "What a voice gives away before a clinician can hear it",
+      "excerpt": "Parkinson's changes the way a person speaks years before it changes the way they walk. Here is what we are learning from Sinhala vowel recordings.",
+      "date": "2026-08-24",
+      "tags": ["Research", "Machine Learning", "Healthcare"],
+      "cover": {
+        "url": "images/R_1.jpg",
+        "alt": "Spectrogram of a sustained vowel recording",
+        "caption": "A sustained /a/ vowel, where most of the useful signal hides."
+      },
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "By the time Parkinson's disease is diagnosed from motor symptoms, somewhere between 50 and 70 percent of the relevant dopaminergic neurons are already gone. That is the uncomfortable arithmetic behind every conversation about early detection — the clinical signs we rely on are *late* signs."
+        },
+        {
+          "type": "paragraph",
+          "text": "Speech is interesting because it is a motor task that happens hundreds of times a day, requires extraordinarily fine coordination, and leaves a recording behind. If the disease degrades motor control, it should degrade speech first and most measurably."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Why a sustained vowel, and not a sentence"
+        },
+        {
+          "type": "paragraph",
+          "text": "Asking someone to hold a single vowel for a few seconds sounds almost too simple. It works precisely because it is simple: it strips away vocabulary, accent, sentence structure and speaking rate, and leaves behind the raw stability of the vocal folds."
+        },
+        {
+          "type": "list",
+          "style": "bullet",
+          "items": [
+            "Jitter — cycle-to-cycle variation in pitch, which rises when motor control gets noisy.",
+            "Shimmer — cycle-to-cycle variation in amplitude.",
+            "Harmonics-to-noise ratio — how much of the signal is voice rather than turbulence.",
+            "MFCCs — a compact description of the overall spectral envelope."
+          ]
+        },
+        {
+          "type": "quote",
+          "text": "The features that matter most are not the ones a listener would notice. They are the ones a listener cannot.",
+          "cite": "Lab notebook, March 2026"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "The language problem"
+        },
+        {
+          "type": "paragraph",
+          "text": "Almost every published vocal-biomarker model is trained on English, Spanish or Italian speakers. Sinhala has a different vowel inventory and different phonation habits, and a model that has never heard it does not transfer cleanly. Building a Sri Lankan dataset was less glamorous than building the model, and mattered more."
+        },
+        {
+          "type": "gallery",
+          "images": [
+            {
+              "url": "images/R_1.jpg",
+              "alt": "Feature distribution plot for control and patient groups",
+              "caption": "Control vs. patient separation on two features."
+            },
+            {
+              "url": "images/R_2.jpg",
+              "alt": "Confusion matrix for the hybrid classifier",
+              "caption": "Hybrid SVM–logistic regression, held-out set."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A hybrid SVM–logistic regression classifier reached 87% accuracy on held-out speakers. That is encouraging and it is not a diagnosis — it is a screening signal, on a small cohort, that needs to survive a much larger and messier sample before it means anything clinically."
+        },
+        {
+          "type": "code",
+          "language": "python",
+          "code": "features = extract_acoustic_features(signal, sr)\nscore = model.predict_proba(features)[:, 1]\n\n# A screening threshold, deliberately biased toward recall\nflag_for_review = score > 0.35"
+        },
+        { "type": "divider" },
+        {
+          "type": "paragraph",
+          "text": "The next question is whether the same signal survives a phone microphone in a noisy room, because that is where screening would actually happen."
+        }
+      ]
+    },
+    {
+      "slug": "building-a-radio-telescope",
+      "title": "Notes from pointing a 5 m dish at the Milky Way",
+      "excerpt": "What we got wrong, what we got right, and what nobody tells you about mounting a large dish on a university roof.",
+      "date": "2026-06-11",
+      "tags": ["Engineering", "Astronomy"],
+      "cover": {
+        "url": "images/Telescope.jpg",
+        "alt": "The 5 metre dish antenna against an overcast sky",
+        "caption": ""
+      },
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "The goal was modest: detect the 21 cm hydrogen line from the galactic plane. The hard parts were not the ones we planned for."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "The dish was the easy part"
+        },
+        {
+          "type": "paragraph",
+          "text": "A 5 m dish is mostly a mechanical problem, and mechanical problems are honest — they either hold or they do not. The electronics were where the project actually lived, and where a week disappeared into a single noisy amplifier stage."
+        },
+        {
+          "type": "list",
+          "style": "number",
+          "items": [
+            "Low-noise amplification as close to the feed as physically possible.",
+            "Bandpass filtering before anything else touches the signal.",
+            "A software-defined radio doing the heavy lifting downstream.",
+            "Long integration times, because the signal is far below the noise floor on any single sample."
+          ]
+        },
+        {
+          "type": "image",
+          "url": "images/Telescope.jpg",
+          "alt": "Close view of the dish mount and drive assembly",
+          "caption": "The altitude drive, rebuilt twice."
+        },
+        {
+          "type": "paragraph",
+          "text": "Automating the pointing turned a two-person job into a scheduled script. That is the change that made the instrument genuinely useful — not the sensitivity, but the fact that it could be left alone."
+        }
+      ]
+    }
+  ]
+}

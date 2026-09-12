@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.M.U.S. Samarakoon — AI, Robotics & Bionics Researcher</title>
+    <meta name="description"
+        content="Personal site of S.M.U.S. Samarakoon — research in Artificial Intelligence, Robotics, Bionics and Ambient Assisted Living.">
+    <meta name="author" content="S.M.U.S. Samarakoon">
+    <meta name="theme-color" content="#fcfcfb" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0d0e11" media="(prefers-color-scheme: dark)">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="S.M.U.S. Samarakoon">
+    <meta property="og:description"
+        content="Research in Artificial Intelligence, Robotics, Bionics and Ambient Assisted Living.">
+    <meta property="og:image" content="images/My.jpg">
+
+    <link rel="icon" type="image/png" sizes="64x64" href="images/Fav.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+    <script>
+        // Applied before first paint so the chosen theme never flashes.
+        (function () {
+            document.documentElement.classList.add('js');
+            try {
+                var saved = localStorage.getItem('theme');
+                if (saved === 'dark' || saved === 'light') {
+                    document.documentElement.setAttribute('data-theme', saved);
+                }
+            } catch (e) { }
+        })();
+    </script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">S.M.U.S. Samarakoon</a>
+            </div>
+            <div class="nav-right">
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link active" aria-current="page">Home</a>
+                    <a href="publication.html" class="nav-link">Publications</a>
+                    <a href="contact.html" class="nav-link">Contact Me</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                </div>
+                <button class="theme-toggle" type="button" aria-label="Switch to dark theme">
+                    <i class="fas fa-sun" aria-hidden="true"></i>
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
+                <button class="hamburger" id="hamburger" type="button" aria-label="Toggle navigation"
+                    aria-controls="nav-menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+        <!-- ============================ Hero ============================ -->
+        <section class="hero">
+            <div class="container hero-inner">
+                <div class="hero-text">
+                    <h1 class="hero-name">S.M.U.S. Samarakoon</h1>
+                    <ul class="hero-interests">
+                        <li>Artificial Intelligence</li>
+                        <li>Robotics</li>
+                        <li>Bionics</li>
+                        <li>Ambient Assisted Living</li>
+                    </ul>
+                    <p class="hero-summary">
+                        I build intelligent systems that work alongside people — from EMG-driven exoskeletons and
+                        assistive robots to vision and speech models for early clinical screening.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="publication.html" class="btn btn-primary">
+                            Publications <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <a href="contact.html" class="btn btn-outline">Get in touch</a>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/udayanga-sasanga-a20700202/" target="_blank"
+                                rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                            <a href="https://github.com/AI-Sasa" target="_blank" rel="noopener" aria-label="GitHub"><i
+                                    class="fab fa-github" aria-hidden="true"></i></a>
+                            <a href="https://scholar.google.com/citations?user=WagIy4cAAAAJ&hl=en" target="_blank"
+                                rel="noopener" aria-label="Google Scholar"><i class="fas fa-graduation-cap"
+                                    aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-portrait">
+                    <img src="images/My.jpg" alt="Portrait of S.M.U.S. Samarakoon" width="500" height="625">
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================ About ============================ -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div>
+                        <span class="eyebrow">About</span>
+                        <dl class="about-facts">
+                            <div class="fact">
+                                <dt>Based in</dt>
+                                <dd>Padukka, Sri Lanka</dd>
+                            </div>
+                            <div class="fact">
+                                <dt>Lab</dt>
+                                <dd>Computational Intelligence &amp; Robotics (CIR)</dd>
+                            </div>
+                            <div class="fact">
+                                <dt>Focus</dt>
+                                <dd>Human–machine collaboration, assistive AI</dd>
+                            </div>
+                        </dl>
+                    </div>
+                    <div class="about-text">
+                        <p>
+                            S.M.U.S. Samarakoon earned his Bachelor's degree from the Sri Lanka Technology Campus in
+                            2024. Since 2023 he has been part of the Computational Intelligence and Robotics (CIR)
+                            Research Lab, working across Artificial Intelligence, Robotics, Bionics and Ambient
+                            Assisted Living.
+                        </p>
+                        <p>
+                            His work aims to push the limits of existing technology — enriching the collaboration
+                            between humans and machines, improving the performance of intelligent robots, and applying
+                            computer vision and AI to build more capable, more efficient systems. Through his research
+                            he hopes to advance Bionics and Robotics while encouraging the next generation of engineers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================== Education ========================== -->
+        <section class="section section--sunken" id="education">
+            <div class="container">
+                <header class="section-head">
+                    <span class="eyebrow">Education</span>
+                    <h2 class="section-title">Academic background</h2>
+                </header>
+                <div class="education-grid">
+                    <article class="education-card reveal">
+                        <div class="education-icon"><i class="fas fa-graduation-cap" aria-hidden="true"></i></div>
+                        <h3>Master of Philosophy</h3>
+                        <p class="institution">Open University of Sri Lanka</p>
+                        <p class="year">2025 — Present</p>
+                        <p class="description">Specialised in Cognitive Science &amp; Generative AI</p>
+                    </article>
+                    <article class="education-card reveal">
+                        <div class="education-icon"><i class="fas fa-university" aria-hidden="true"></i></div>
+                        <h3>BSc (Hons) in Mechatronics Engineering</h3>
+                        <p class="institution">Sri Lanka Technology Campus</p>
+                        <p class="year">2019 — 2023</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================= Experience ========================== -->
+        <section class="section" id="experience">
+            <div class="container">
+                <header class="section-head">
+                    <span class="eyebrow">Experience</span>
+                    <h2 class="section-title">Working experience</h2>
+                </header>
+                <div class="timeline">
+                    <article class="timeline-item is-current reveal">
+                        <div class="timeline-head">
+                            <h3>Lecturer (Probationary)</h3>
+                            <span class="tag-soft">Full time</span>
+                        </div>
+                        <p class="institution">Sri Lanka Technology Campus</p>
+                        <span class="year">2026 — Present</span>
+                        <p class="description">
+                            Lecturing in the Department of Mechatronics Engineering — delivering coursework,
+                            supervising undergraduate projects, and supporting research activity across the department.
+                        </p>
+                    </article>
+
+                    <article class="timeline-item is-current reveal">
+                        <div class="timeline-head">
+                            <h3>Research Assistant</h3>
+                            <span class="tag-soft">Part time</span>
+                        </div>
+                        <p class="institution">Computational Intelligence and Robotics (CIR) Research Lab</p>
+                        <span class="year">2023 — Present</span>
+                        <p class="description">
+                            Conducting research in Artificial Intelligence, Robotics, Bionics and Ambient Assisted
+                            Living to advance the collaboration between humans and machines.
+                        </p>
+                    </article>
+
+                    <article class="timeline-item reveal">
+                        <div class="timeline-head">
+                            <h3>Teaching Assistant</h3>
+                            <span class="tag-soft">Full time</span>
+                        </div>
+                        <p class="institution">Sri Lanka Technology Campus</p>
+                        <span class="year">2024 — 2026</span>
+                        <p class="description">
+                            Supported faculty and undergraduate students in the Department of Mechatronics Engineering
+                            across laboratory sessions, coursework and project supervision.
+                        </p>
+                    </article>
+
+                    <article class="timeline-item reveal">
+                        <div class="timeline-head">
+                            <h3>Research &amp; Development Engineer</h3>
+                            <span class="tag-soft">Full time</span>
+                        </div>
+                        <p class="institution">Sentinel Systems (Pvt) Ltd</p>
+                        <span class="year">2023 — 2024</span>
+                        <p class="description">
+                            Researched, designed and tested prototypes for AI and product design solutions against
+                            project and industry requirements.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================== Ongoing research ======================= -->
+        <section class="section section--sunken" id="research">
+            <div class="container">
+                <header class="section-head">
+                    <span class="eyebrow">Ongoing research</span>
+                    <h2 class="section-title">What I'm working on</h2>
+                    <p class="section-lead">
+                        Current investigations into digital biomarkers — using AI to detect what the human eye and ear
+                        can miss, early enough to matter.
+                    </p>
+                </header>
+                <div class="research-grid">
+                    <article class="research-card reveal">
+                        <span class="research-index">01</span>
+                        <h3>Vocal Biomarker for PD Detection</h3>
+                        <p>
+                            Identifying new patterns between Parkinson's Disease and vocal biomarkers. By analysing
+                            subtle voice characteristics, this work aims to enable early PD detection using AI models
+                            for clinical and telehealth applications.
+                        </p>
+                    </article>
+                    <article class="research-card reveal">
+                        <span class="research-index">02</span>
+                        <h3>Facial Biomarker for Stress Detection</h3>
+                        <p>
+                            Exploring the connection between facial biomarkers and stress levels. Advanced computer
+                            vision methods help reveal patterns that indicate psychological stress, paving the way for
+                            AI-driven stress monitoring.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================= Selected projects ===================== -->
+        <section class="section" id="projects">
+            <div class="container">
+                <header class="section-head">
+                    <span class="eyebrow">Projects</span>
+                    <h2 class="section-title">Selected work</h2>
+                    <p class="section-lead">Projects and collaborations beyond the lab.</p>
+                </header>
+                <div class="work-grid">
+                    <article class="work-card reveal">
+                        <div class="work-image">
+                            <img src="images/GLEE.jpg" alt="GLEE LunaSat mission" loading="lazy">
+                        </div>
+                        <div class="work-content">
+                            <h3>GLEE</h3>
+                            <p>A science and technology mission to the surface of the Moon, conducted by students from
+                                all over the world.</p>
+                            <div class="work-tags">
+                                <span class="tag">Pico Satellite</span>
+                                <span class="tag">LunaSat</span>
+                                <span class="tag">Artemis</span>
+                            </div>
+                            <div class="work-links">
+                                <a href="https://www.glee2023.org/home" class="btn btn-outline" target="_blank"
+                                    rel="noopener">View project</a>
+                                <a href="https://classroom.google.com/c/NDg0NzYzNTE0NTc4" class="btn btn-outline"
+                                    target="_blank" rel="noopener">Workshop</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="work-card reveal">
+                        <div class="work-image">
+                            <img src="images/Bio.jpg" alt="Biodiesel research project" loading="lazy">
+                        </div>
+                        <div class="work-content">
+                            <h3>Bio Diesel</h3>
+                            <p>A biodiesel research team that emerged during Sri Lanka's diesel crisis, working on
+                                clean, renewable fuel solutions for a greener tomorrow.</p>
+                            <div class="work-tags">
+                                <span class="tag">Biodiesel</span>
+                                <span class="tag">Sustainable</span>
+                                <span class="tag">Green Energy</span>
+                            </div>
+                            <div class="work-links">
+                                <a href="https://www.linkedin.com/posts/heminda_biodiesel-startup-greenenergy-ugcPost-7240226169021743104-fLEA?utm_source=share&utm_medium=member_desktop&rcm=ACoAADO3ubgBP7kxl1JmEIUdBuTI_ARnxLk8Jvk"
+                                    class="btn btn-outline" target="_blank" rel="noopener">View project</a>
+                                <a href="https://www.intarg.haller.pl/targi/pliki_wynalazki/posters/824-1679283459.pdf"
+                                    class="btn btn-outline" target="_blank" rel="noopener">Awards</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="work-card reveal">
+                        <div class="work-image">
+                            <img src="images/Telescope.jpg" alt="Radio telescope dish antenna" loading="lazy">
+                        </div>
+                        <div class="work-content">
+                            <h3>Project Albedo</h3>
+                            <p>After designing a radio telescope around a 5 m dish antenna, we successfully tuned in to
+                                the natural radio frequencies broadcast by the Milky Way.</p>
+                            <div class="work-tags">
+                                <span class="tag">Astrophysics</span>
+                                <span class="tag">Milky Way</span>
+                                <span class="tag">Telescope</span>
+                            </div>
+                            <div class="work-links">
+                                <a href="https://www.seds.sltc.ac.lk/radio-telescope/" class="btn btn-outline"
+                                    target="_blank" rel="noopener">View project</a>
+                                <a href="https://www.seds.sltc.ac.lk/radio-telescope/automatic/" class="btn btn-outline"
+                                    target="_blank" rel="noopener">Controlling</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <span class="footer-name">S.M.U.S. Samarakoon</span>
+                <p>Researching how intelligent machines can work with people, not around them.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Navigate</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="publication.html">Publications</a></li>
+                    <li><a href="contact.html">Contact Me</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/udayanga-sasanga-a20700202/" target="_blank" rel="noopener"
+                        aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="https://github.com/AI-Sasa" target="_blank" rel="noopener" aria-label="GitHub"><i
+                            class="fab fa-github" aria-hidden="true"></i></a>
+                    <a href="https://scholar.google.com/citations?user=WagIy4cAAAAJ&hl=en" target="_blank"
+                        rel="noopener" aria-label="Google Scholar"><i class="fas fa-graduation-cap"
+                            aria-hidden="true"></i></a>
+                    <a href="https://www.fiverr.com/udayangasasanga?public_mode=true" target="_blank" rel="noopener"
+                        aria-label="Fiverr"><img src="https://cdn.simpleicons.org/fiverr/1DBF73" alt=""></a>
+                </div>
+            </div>
+            <div class="footer-section footer-contact">
+                <h3>Contact</h3>
+                <p><i class="fas fa-envelope" aria-hidden="true"></i><a
+                        href="mailto:udayangasasanga11@gmail.com">udayangasasanga11@gmail.com</a></p>
+                <p><i class="fas fa-phone" aria-hidden="true"></i><a href="tel:+94719548741">+94 71 954 8741</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span data-year>2026</span> S.M.U.S. Samarakoon. All rights reserved.</p>
+            <a href="#main" class="back-to-top">Back to top ↑</a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
