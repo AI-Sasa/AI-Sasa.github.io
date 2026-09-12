@@ -469,9 +469,15 @@
                 renderMessage(target, 'fas fa-circle-question', 'Post not found',
                     'That article does not exist, or it has not been published yet.',
                     { label: 'Back to the blog', href: 'blog.html' });
+                if (window.SiteAnalytics) window.SiteAnalytics.trackMissingArticle(slug);
                 return;
             }
             renderArticle(target, entry);
+            // Reported here rather than on page load, so the visit is filed
+            // under this post's own URL and real title.
+            if (window.SiteAnalytics) {
+                window.SiteAnalytics.trackArticle(entry.post.slug, entry.post.title);
+            }
         }).catch(function (error) {
             renderMessage(target, 'fas fa-triangle-exclamation', 'Post could not be loaded', describeError(error));
         });
