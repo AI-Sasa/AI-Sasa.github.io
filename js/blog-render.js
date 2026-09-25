@@ -323,43 +323,9 @@
         target.appendChild(list);
     }
 
-    function buildFilters(container, posts, onChange) {
-        var tags = [];
-        posts.forEach(function (post) {
-            post.tags.forEach(function (tag) {
-                if (tags.indexOf(tag) === -1) tags.push(tag);
-            });
-        });
-
-        if (tags.length < 2) return;
-
-        var group = el('div', 'blog-filters');
-        group.setAttribute('role', 'group');
-        group.setAttribute('aria-label', 'Filter posts by topic');
-
-        ['All'].concat(tags.sort()).forEach(function (tag, index) {
-            var chip = el('button', 'chip' + (index === 0 ? ' is-active' : ''), tag);
-            chip.type = 'button';
-            chip.setAttribute('aria-pressed', index === 0 ? 'true' : 'false');
-            chip.addEventListener('click', function () {
-                group.querySelectorAll('.chip').forEach(function (other) {
-                    other.classList.remove('is-active');
-                    other.setAttribute('aria-pressed', 'false');
-                });
-                chip.classList.add('is-active');
-                chip.setAttribute('aria-pressed', 'true');
-                onChange(index === 0 ? null : tag);
-            });
-            group.appendChild(chip);
-        });
-
-        container.appendChild(group);
-    }
-
     function initListing() {
         var target = document.getElementById('blog-posts');
         if (!target) return;
-        var filterHost = document.getElementById('blog-filter-host');
 
         renderSkeletons(target, 2);
 
@@ -372,14 +338,6 @@
             }
 
             renderList(target, posts);
-
-            if (filterHost) {
-                buildFilters(filterHost, posts, function (tag) {
-                    renderList(target, tag
-                        ? posts.filter(function (p) { return p.tags.indexOf(tag) !== -1; })
-                        : posts);
-                });
-            }
         }).catch(function (error) {
             renderMessage(target, 'fas fa-triangle-exclamation', 'Posts could not be loaded', describeError(error));
         });
